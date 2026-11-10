@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2E1065" />
+      <stop offset="40%" stop-color="#0E1738" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#FDE047" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5FF" />
+      <stop offset="50%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="1130" fill="url(#bgGlow)" />
+
+  <!-- Outer Double Gold Borders -->
+  <rect x="25" y="25" width="750" height="1080" rx="16" fill="none" stroke="url(#goldGrad)" stroke-width="3" opacity="0.8" />
+  <rect x="35" y="35" width="730" height="1060" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="6,6" opacity="0.5" />
+
+  <!-- Decorative Corner Ornaments -->
+  <g fill="url(#goldGrad)">
+    <!-- Top-Left -->
+    <path d="M 45 45 L 85 45 A 40 40 0 0 0 45 85 Z" opacity="0.7"/>
+    <circle cx="95" cy="95" r="4" />
+    <!-- Top-Right -->
+    <path d="M 755 45 L 715 45 A 40 40 0 0 1 755 85 Z" opacity="0.7"/>
+    <circle cx="705" cy="95" r="4" />
+    <!-- Bottom-Left -->
+    <path d="M 45 1085 L 85 1085 A 40 40 0 0 1 45 1045 Z" opacity="0.7"/>
+    <circle cx="95" cy="1035" r="4" />
+    <!-- Bottom-Right -->
+    <path d="M 755 1085 L 715 1085 A 40 40 0 0 0 755 1045 Z" opacity="0.7"/>
+    <circle cx="705" cy="1035" r="4" />
+  </g>
+
+  <!-- Floating Starbursts & Confetti -->
+  <g fill="url(#goldGrad)" opacity="0.6">
+    <path d="M 120 220 L 125 200 L 130 220 L 150 225 L 130 230 L 125 250 L 120 230 L 100 225 Z" />
+    <path d="M 680 260 L 684 245 L 688 260 L 703 264 L 688 268 L 684 283 L 680 268 L 665 264 Z" />
+    <path d="M 180 820 L 183 805 L 186 820 L 201 823 L 186 826 L 183 841 L 180 826 L 165 823 Z" />
+    <path d="M 650 860 L 655 840 L 660 860 L 680 865 L 660 870 L 655 890 L 650 870 L 630 865 Z" />
+    <!-- Confetti Dots -->
+    <circle cx="160" cy="340" r="3" fill="#A855F7" />
+    <circle cx="640" cy="400" r="4" fill="#F59E0B" />
+    <circle cx="220" cy="500" r="3" fill="#EC4899" />
+    <circle cx="600" cy="680" r="4" fill="#38BDF8" />
+    <circle cx="140" cy="740" r="3" fill="#FDE047" />
+  </g>
+
+  <!-- Header Badge -->
+  <g filter="url(#softShadow)">
+    <rect x="250" y="70" width="300" height="42" rx="21" fill="#1E1B4B" stroke="url(#goldGrad)" stroke-width="1.5" />
+    <text x="400" y="96" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#FDE68A" text-anchor="middle">
+      COLLEGE OF ENGINEERING
+    </text>
+  </g>
+
+  <!-- Big Glowing Star / Emblem Icon -->
+  <g transform="translate(400, 220)" filter="url(#goldGlow)">
+    <circle cx="0" cy="0" r="64" fill="#1E0B38" stroke="url(#goldGrad)" stroke-width="2.5" />
+    <!-- Grand Star -->
+    <path d="M 0 -45 L 13 -13 L 45 0 L 13 13 L 0 45 L -13 13 L -45 0 L -13 -13 Z" fill="url(#goldGrad)" />
+    <circle cx="0" cy="0" r="8" fill="#FFFBEB" />
+  </g>
+
+  <!-- Main Titles -->
+  <text x="400" y="340" font-family="'Cinzel', 'Playfair Display', serif" font-size="24" font-weight="700" letter-spacing="6" fill="#A855F7" text-anchor="middle">
+    ANNUAL CELEBRATION
+  </text>
+  
+  <text x="400" y="415" font-family="'Cinzel', 'Playfair Display', serif" font-size="52" font-weight="900" letter-spacing="4" fill="url(#goldGrad)" filter="url(#softShadow)" text-anchor="middle">
+    FRESHERS 2026
+  </text>
+
+  <!-- Ribbons / Underline -->
+  <line x1="260" y1="445" x2="540" y2="445" stroke="url(#goldGrad)" stroke-width="2" />
+  <circle cx="400" cy="445" r="5" fill="#F59E0B" />
+
+  <!-- Prominent "COMING SOON" Card Box -->
+  <g filter="url(#softShadow)">
+    <rect x="90" y="490" width="620" height="280" rx="20" fill="#0A1026" stroke="#9333EA" stroke-width="2" opacity="0.9" />
+    <rect x="100" y="500" width="600" height="260" rx="14" fill="#0E1738" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4,4" opacity="0.7" />
+    
+    <text x="400" y="570" font-family="'Cinzel', 'Plus Jakarta Sans', serif" font-size="28" font-weight="800" letter-spacing="2" fill="#FEF08A" text-anchor="middle">
+      THE OFFICIAL FRESHERS FLYER
+    </text>
+    <text x="400" y="618" font-family="'Cinzel', 'Plus Jakarta Sans', serif" font-size="34" font-weight="900" letter-spacing="3" fill="url(#goldGrad)" text-anchor="middle">
+      IS COMING SOON!
+    </text>
+
+    <!-- Subtitle description -->
+    <text x="400" y="675" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#CBD5E1" text-anchor="middle">
+      Theme Unveiling • Star DJ Lineup • Games & Contests
+    </text>
+    <text x="400" y="705" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#CBD5E1" text-anchor="middle">
+      Crowning of Mr. & Miss Fresher • Feast & Red Carpet
+    </text>
+
+    <!-- Sparkle Badge -->
+    <rect x="300" y="725" width="200" height="28" rx="14" fill="#2E1065" stroke="url(#purpleGrad)" stroke-width="1" />
+    <text x="400" y="744" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#E9D5FF" text-anchor="middle">
+      ✨ STAY TUNED JUNIORS ✨
+    </text>
+  </g>
+
+  <!-- Quote from Seniors -->
+  <text x="400" y="850" font-family="'Playfair Display', serif" font-style="italic" font-size="18" fill="#FDE68A" text-anchor="middle">
+    "New beginnings, endless memories – together we make college history!"
+  </text>
+
+  <!-- Highlights Preview Pill Grid -->
+  <g transform="translate(140, 895)">
+    <rect x="0" y="0" width="160" height="38" rx="8" fill="#1E1B4B" stroke="#A855F7" stroke-width="1"/>
+    <text x="80" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="middle">🎧 Live Music & DJ</text>
+
+    <rect x="180" y="0" width="160" height="38" rx="8" fill="#1E1B4B" stroke="#A855F7" stroke-width="1"/>
+    <text x="260" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="middle">👑 Royal Crowns</text>
+
+    <rect x="360" y="0" width="160" height="38" rx="8" fill="#1E1B4B" stroke="#A855F7" stroke-width="1"/>
+    <text x="440" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#F8FAFC" text-anchor="middle">📸 Photo Booth</text>
+  </g>
+
+  <!-- Footer Signoff -->
+  <text x="400" y="1010" font-family="'Cinzel', 'Plus Jakarta Sans', serif" font-size="16" font-weight="700" letter-spacing="4" fill="#F59E0B" text-anchor="middle">
+    WITH LOVE, YOUR SENIORS ❤️
+  </text>
+
+  <text x="400" y="1045" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#64748B" text-anchor="middle">
+    Scan the QR Code or visit the website for real-time updates and invitations
+  </text>
+</svg>
