@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, QrCode, FileText, Share2, Menu, X, Calendar } from 'lucide-react';
+import { Sparkles, QrCode, FileText, Share2, Menu, X } from 'lucide-react';
 import { eventConfig } from '../config/eventConfig';
 import { triggerGrandCelebration } from './ParticlesBackground';
 
@@ -26,7 +26,7 @@ export default function Navbar({ onOpenFlyer, onOpenQR, onOpenShare }) {
               {eventConfig.collegeName || "COLLEGE FRESHERS"}
             </span>
             <span className="block text-base sm:text-lg font-black tracking-tight text-white group-hover:text-gold-300 transition">
-              FRESHERS 2026
+              FLORENZA 2026
             </span>
           </div>
         </a>
@@ -39,26 +39,24 @@ export default function Navbar({ onOpenFlyer, onOpenQR, onOpenShare }) {
           >
             Welcome Message
           </a>
+          <a 
+            href="#flyer" 
+            onClick={triggerGrandCelebration}
+            className="text-slate-300 hover:text-gold-400 transition flex items-center gap-1.5"
+          >
+            <FileText className="w-4 h-4 text-gold-400" />
+            Official Flyer
+          </a>
           <button 
-            onClick={onOpenFlyer}
-            className="text-slate-300 hover:text-gold-400 transition flex items-center gap-1.5"
+            onClick={() => {
+              triggerGrandCelebration();
+              onOpenFlyer();
+            }}
+            className="text-gold-400 hover:text-gold-300 font-semibold transition flex items-center gap-1.5 bg-gold-500/10 hover:bg-gold-500/20 px-3.5 py-1.5 rounded-full border border-gold-500/30 text-xs tracking-wide uppercase"
           >
-            <FileText className="w-4 h-4 text-purple-400" />
-            Freshers Flyer
+            <Sparkles className="w-3.5 h-3.5" />
+            Expand Flyer
           </button>
-          <a 
-            href="#highlights" 
-            className="text-slate-300 hover:text-gold-400 transition"
-          >
-            Party Highlights
-          </a>
-          <a 
-            href="#schedule" 
-            className="text-slate-300 hover:text-gold-400 transition flex items-center gap-1.5"
-          >
-            <Calendar className="w-4 h-4 text-gold-400" />
-            Schedule
-          </a>
         </nav>
 
         {/* Action Buttons */}
@@ -100,30 +98,28 @@ export default function Navbar({ onOpenFlyer, onOpenQR, onOpenShare }) {
           >
             Welcome Message
           </a>
-          <button
+          <a
+            href="#flyer"
             onClick={() => {
               setMobileMenuOpen(false);
-              onOpenFlyer();
+              triggerGrandCelebration();
             }}
             className="w-full text-left flex items-center gap-2 text-slate-200 hover:text-gold-400 py-1 font-medium"
           >
-            <FileText className="w-4 h-4 text-purple-400" />
-            Freshers Flyer
+            <FileText className="w-4 h-4 text-gold-400" />
+            Official Flyer
+          </a>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              triggerGrandCelebration();
+              onOpenFlyer();
+            }}
+            className="w-full text-left flex items-center gap-2 text-gold-400 hover:text-gold-300 py-1 font-medium"
+          >
+            <Sparkles className="w-4 h-4 text-gold-400" />
+            Expand Fullscreen Flyer
           </button>
-          <a
-            href="#highlights"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-200 hover:text-gold-400 py-1 font-medium"
-          >
-            Party Highlights
-          </a>
-          <a
-            href="#schedule"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-200 hover:text-gold-400 py-1 font-medium"
-          >
-            Schedule & Venue
-          </a>
           <div className="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
             <button
               onClick={() => {

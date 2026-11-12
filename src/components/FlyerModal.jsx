@@ -9,8 +9,6 @@ import {
   FileText, 
   ArrowLeft, 
   AlertCircle,
-  ExternalLink,
-  Share2,
   Check
 } from 'lucide-react';
 import { eventConfig } from '../config/eventConfig';
@@ -44,8 +42,6 @@ export default function FlyerModal({ isOpen, onClose }) {
   const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.25, 0.6));
   const handleResetZoom = () => setZoomLevel(1);
 
-  // Active flyer path (if test preview enabled and no real flyer yet, use the sample flyer SVG!)
-  const activeFlyerSrc = flyer.src || '/assets/fresher-flyer.png';
   const sampleFlyerSrc = '/assets/sample-flyer.svg';
   const effectiveSrc = isFlyerReady ? (flyer.src || sampleFlyerSrc) : '/assets/fresher-flyer-placeholder.svg';
 

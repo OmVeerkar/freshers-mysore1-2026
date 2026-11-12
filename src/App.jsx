@@ -3,8 +3,7 @@ import Navbar from './components/Navbar';
 import ParticlesBackground from './components/ParticlesBackground';
 import AudioPlayer from './components/AudioPlayer';
 import HeroSection from './components/HeroSection';
-import HighlightsSection from './components/HighlightsSection';
-import CountdownSection from './components/CountdownSection';
+import FlyerSection from './components/FlyerSection';
 import FlyerModal from './components/FlyerModal';
 import QRCodeModal from './components/QRCodeModal';
 import SocialShareModal from './components/SocialShareModal';
@@ -40,13 +39,10 @@ export default function App() {
           onOpenQR={() => setQrModalOpen(true)}
         />
 
-        {/* Highlights / What to Expect Section */}
-        <HighlightsSection 
+        {/* Official Flyer Section */}
+        <FlyerSection 
           onOpenFlyer={() => setFlyerModalOpen(true)}
-        />
-
-        {/* Schedule & Countdown Section */}
-        <CountdownSection 
+          onOpenQR={() => setQrModalOpen(true)}
           onOpenShare={() => setShareModalOpen(true)}
         />
 

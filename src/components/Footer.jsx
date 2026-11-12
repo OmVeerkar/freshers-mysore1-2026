@@ -23,11 +23,11 @@ export default function Footer({ onOpenFlyer, onOpenQR }) {
             <div className="flex items-center justify-center md:justify-start gap-2 text-gold-400">
               <Sparkles className="w-5 h-5 text-gold-400" />
               <span className="font-serif font-black tracking-widest text-lg text-white">
-                FRESHERS 2026
+                FLORENZA 2026
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm">
-              &ldquo;{eventConfig.slogan}&rdquo;
+              &ldquo;{eventConfig.tagline || eventConfig.slogan}&rdquo;
             </p>
           </div>
 
@@ -36,6 +36,14 @@ export default function Footer({ onOpenFlyer, onOpenQR }) {
             <a href="#welcome" className="hover:text-gold-400 transition">
               Welcome
             </a>
+            <a 
+              href="#flyer" 
+              onClick={triggerGrandCelebration}
+              className="hover:text-gold-400 transition flex items-center gap-1.5"
+            >
+              <FileText className="w-4 h-4 text-gold-400" />
+              <span>Official Flyer</span>
+            </a>
             <button 
               onClick={() => {
                 triggerGrandCelebration();
@@ -43,15 +51,9 @@ export default function Footer({ onOpenFlyer, onOpenQR }) {
               }}
               className="hover:text-gold-400 transition flex items-center gap-1.5"
             >
-              <FileText className="w-4 h-4 text-purple-400" />
-              <span>Flyer</span>
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span>Fullscreen Flyer</span>
             </button>
-            <a href="#highlights" className="hover:text-gold-400 transition">
-              Highlights
-            </a>
-            <a href="#schedule" className="hover:text-gold-400 transition">
-              Schedule
-            </a>
             <button 
               onClick={onOpenQR}
               className="hover:text-gold-400 transition flex items-center gap-1.5 text-gold-400"
@@ -82,7 +84,7 @@ export default function Footer({ onOpenFlyer, onOpenQR }) {
             <span className="text-gradient-gold">by Your Seniors</span>
           </p>
           <p className="text-xs text-slate-500">
-            {eventConfig.collegeName} • Official Freshers Welcome Portal
+            {eventConfig.collegeName} • Official Florenza Freshers Welcome Portal
           </p>
         </div>
 

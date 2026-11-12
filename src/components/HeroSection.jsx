@@ -1,16 +1,21 @@
 import React from 'react';
-import { Sparkles, Heart, FileText, QrCode, ArrowDown, Star, PartyPopper } from 'lucide-react';
+import { Sparkles, Star, ArrowDown, QrCode } from 'lucide-react';
 import { eventConfig } from '../config/eventConfig';
 import { triggerGrandCelebration } from './ParticlesBackground';
 
 export default function HeroSection({ onOpenFlyer, onOpenQR }) {
   const handleFlyerClick = () => {
     triggerGrandCelebration();
-    onOpenFlyer();
+    const flyerEl = document.getElementById('flyer');
+    if (flyerEl) {
+      flyerEl.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      onOpenFlyer();
+    }
   };
 
   return (
-    <section id="welcome" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section id="welcome" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       {/* Background Radial Glow Accents */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] lg:w-[850px] h-[400px] sm:h-[600px] bg-purple-900/25 rounded-full blur-[130px] pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
@@ -88,10 +93,7 @@ export default function HeroSection({ onOpenFlyer, onOpenQR }) {
           </div>
         </div>
 
-        {/* ============================================================= */}
-        {/* SECTION 3: MAIN ACTION BUTTON – VIEW FLYER                    */}
-        {/* Large, attractive, animated button with high visual impact   */}
-        {/* ============================================================= */}
+        {/* SECTION 3: MAIN ACTION BUTTONS */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-6">
           <button
             onClick={handleFlyerClick}
@@ -101,7 +103,7 @@ export default function HeroSection({ onOpenFlyer, onOpenQR }) {
             <span className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gold-400 to-amber-500 opacity-60 blur-md group-hover:opacity-100 transition duration-300 animate-pulse" />
             
             <span className="relative flex items-center gap-3">
-              <span className="text-2xl animate-bounce">🎉</span>
+              <span className="text-2xl animate-bounce">🌸</span>
               <span className="text-navy-950 font-black">VIEW THE FRESHERS FLYER</span>
               <Sparkles className="w-5 h-5 text-navy-950" />
             </span>
@@ -116,10 +118,16 @@ export default function HeroSection({ onOpenFlyer, onOpenQR }) {
           </button>
         </div>
 
-        {/* Scroll hint */}
-        <div className="mt-14 flex flex-col items-center justify-center gap-2 text-slate-400 text-xs tracking-widest uppercase">
-          <span>Explore Celebrations Below</span>
-          <ArrowDown className="w-4 h-4 text-gold-400 animate-bounce" />
+        {/* Scroll hint pointing directly to Flyer Section */}
+        <div className="mt-14 flex flex-col items-center justify-center">
+          <a 
+            href="#flyer"
+            onClick={triggerGrandCelebration}
+            className="inline-flex flex-col items-center justify-center gap-2 text-slate-400 hover:text-gold-300 text-xs tracking-widest uppercase transition group"
+          >
+            <span className="group-hover:tracking-wider transition-all">Explore Official Invitation Flyer Below</span>
+            <ArrowDown className="w-4 h-4 text-gold-400 animate-bounce" />
+          </a>
         </div>
 
       </div>
